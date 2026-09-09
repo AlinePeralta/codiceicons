@@ -1,16 +1,12 @@
-const fs = require('fs');
+const fs = require("fs");
 const path = require("path");
 
-// =========================================================
 // Configuración
-// =========================================================
 
 const iconsDir = path.join(__dirname, "../src/icons");
 const outputFile = path.join(__dirname, "../icons.css");
 
-// =========================================================
-// Encabezado del CSS
-// =========================================================
+// CSS
 
 let css = `/*
  * Códice Icons 2.0
@@ -28,6 +24,7 @@ let css = `/*
     width: 1em;
     height: 1em;
 
+    font-size: 1rem;
     background-color: currentColor;
 
     -webkit-mask-repeat: no-repeat;
@@ -45,17 +42,10 @@ let css = `/*
    Tamaños
    ========================================================= */
 
-/* Small - tamaño por defecto */
-.icon-sm {
-    font-size: 1rem;
-}
-
-/* Medium */
 .icon-md {
     font-size: 1.5rem;
 }
 
-/* Large */
 .icon-lg {
     font-size: 2rem;
 }
@@ -63,7 +53,7 @@ let css = `/*
 `;
 
 // =========================================================
-// Obtener SVGs
+// Obtener todos los SVG
 // =========================================================
 
 const files = fs
@@ -72,7 +62,7 @@ const files = fs
     .sort();
 
 // =========================================================
-// Generar clases
+// Generar clases automáticamente
 // =========================================================
 
 files.forEach((file) => {
@@ -87,7 +77,7 @@ files.forEach((file) => {
 });
 
 // =========================================================
-// Escribir icons.css
+// Generar icons.css
 // =========================================================
 
 fs.writeFileSync(outputFile, css, "utf8");

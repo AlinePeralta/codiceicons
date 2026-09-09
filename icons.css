@@ -14,6 +14,7 @@
     width: 1em;
     height: 1em;
 
+    font-size: 1rem;
     background-color: currentColor;
 
     -webkit-mask-repeat: no-repeat;
@@ -31,19 +32,22 @@
    Tamaños
    ========================================================= */
 
-/* Small - tamaño por defecto */
-.icon-sm {
-    font-size: 1rem;
-}
-
-/* Medium */
 .icon-md {
     font-size: 1.5rem;
 }
 
-/* Large */
 .icon-lg {
     font-size: 2rem;
+}
+
+.co-imagen {
+    -webkit-mask-image: url("./src/icons/co-imagen.svg");
+    mask-image: url("./src/icons/co-imagen.svg");
+}
+
+.ico right {
+    -webkit-mask-image: url("./src/icons/ico right.svg");
+    mask-image: url("./src/icons/ico right.svg");
 }
 
 .ico-admin {
@@ -71,6 +75,16 @@
     mask-image: url("./src/icons/ico-arrow-cambio.svg");
 }
 
+.ico-bank {
+    -webkit-mask-image: url("./src/icons/ico-bank.svg");
+    mask-image: url("./src/icons/ico-bank.svg");
+}
+
+.ico-bell--slash {
+    -webkit-mask-image: url("./src/icons/ico-bell--slash.svg");
+    mask-image: url("./src/icons/ico-bell--slash.svg");
+}
+
 .ico-bell {
     -webkit-mask-image: url("./src/icons/ico-bell.svg");
     mask-image: url("./src/icons/ico-bell.svg");
@@ -81,9 +95,29 @@
     mask-image: url("./src/icons/ico-buscar.svg");
 }
 
+.ico-calendar {
+    -webkit-mask-image: url("./src/icons/ico-calendar.svg");
+    mask-image: url("./src/icons/ico-calendar.svg");
+}
+
+.ico-camera {
+    -webkit-mask-image: url("./src/icons/ico-camera.svg");
+    mask-image: url("./src/icons/ico-camera.svg");
+}
+
 .ico-card {
     -webkit-mask-image: url("./src/icons/ico-card.svg");
     mask-image: url("./src/icons/ico-card.svg");
+}
+
+.ico-cargar {
+    -webkit-mask-image: url("./src/icons/ico-cargar.svg");
+    mask-image: url("./src/icons/ico-cargar.svg");
+}
+
+.ico-cash {
+    -webkit-mask-image: url("./src/icons/ico-cash.svg");
+    mask-image: url("./src/icons/ico-cash.svg");
 }
 
 .ico-cerrar {
@@ -99,6 +133,11 @@
 .ico-contracargo {
     -webkit-mask-image: url("./src/icons/ico-contracargo.svg");
     mask-image: url("./src/icons/ico-contracargo.svg");
+}
+
+.ico-copy {
+    -webkit-mask-image: url("./src/icons/ico-copy.svg");
+    mask-image: url("./src/icons/ico-copy.svg");
 }
 
 .ico-correo {
@@ -121,9 +160,29 @@
     mask-image: url("./src/icons/ico-descargar.svg");
 }
 
+.ico-descargar_1 {
+    -webkit-mask-image: url("./src/icons/ico-descargar_1.svg");
+    mask-image: url("./src/icons/ico-descargar_1.svg");
+}
+
 .ico-devolucion {
     -webkit-mask-image: url("./src/icons/ico-devolucion.svg");
     mask-image: url("./src/icons/ico-devolucion.svg");
+}
+
+.ico-devolver {
+    -webkit-mask-image: url("./src/icons/ico-devolver.svg");
+    mask-image: url("./src/icons/ico-devolver.svg");
+}
+
+.ico-dinero {
+    -webkit-mask-image: url("./src/icons/ico-dinero.svg");
+    mask-image: url("./src/icons/ico-dinero.svg");
+}
+
+.ico-dispersion {
+    -webkit-mask-image: url("./src/icons/ico-dispersion.svg");
+    mask-image: url("./src/icons/ico-dispersion.svg");
 }
 
 .ico-doc {
@@ -136,6 +195,41 @@
     mask-image: url("./src/icons/ico-edit.svg");
 }
 
+.ico-editar {
+    -webkit-mask-image: url("./src/icons/ico-editar.svg");
+    mask-image: url("./src/icons/ico-editar.svg");
+}
+
+.ico-edocuenta {
+    -webkit-mask-image: url("./src/icons/ico-edocuenta.svg");
+    mask-image: url("./src/icons/ico-edocuenta.svg");
+}
+
+.ico-error {
+    -webkit-mask-image: url("./src/icons/ico-error.svg");
+    mask-image: url("./src/icons/ico-error.svg");
+}
+
+.ico-excel {
+    -webkit-mask-image: url("./src/icons/ico-excel.svg");
+    mask-image: url("./src/icons/ico-excel.svg");
+}
+
+.ico-eye-slash {
+    -webkit-mask-image: url("./src/icons/ico-eye-slash.svg");
+    mask-image: url("./src/icons/ico-eye-slash.svg");
+}
+
+.ico-eye {
+    -webkit-mask-image: url("./src/icons/ico-eye.svg");
+    mask-image: url("./src/icons/ico-eye.svg");
+}
+
+.ico-face {
+    -webkit-mask-image: url("./src/icons/ico-face.svg");
+    mask-image: url("./src/icons/ico-face.svg");
+}
+
 .ico-filtros {
     -webkit-mask-image: url("./src/icons/ico-filtros.svg");
     mask-image: url("./src/icons/ico-filtros.svg");
@@ -146,9 +240,39 @@
     mask-image: url("./src/icons/ico-flecha-l.svg");
 }
 
+.ico-info {
+    -webkit-mask-image: url("./src/icons/ico-info.svg");
+    mask-image: url("./src/icons/ico-info.svg");
+}
+
+.ico-insta {
+    -webkit-mask-image: url("./src/icons/ico-insta.svg");
+    mask-image: url("./src/icons/ico-insta.svg");
+}
+
+.ico-left {
+    -webkit-mask-image: url("./src/icons/ico-left.svg");
+    mask-image: url("./src/icons/ico-left.svg");
+}
+
 .ico-link {
     -webkit-mask-image: url("./src/icons/ico-link.svg");
     mask-image: url("./src/icons/ico-link.svg");
+}
+
+.ico-linkedin {
+    -webkit-mask-image: url("./src/icons/ico-linkedin.svg");
+    mask-image: url("./src/icons/ico-linkedin.svg");
+}
+
+.ico-logout {
+    -webkit-mask-image: url("./src/icons/ico-logout.svg");
+    mask-image: url("./src/icons/ico-logout.svg");
+}
+
+.ico-menu {
+    -webkit-mask-image: url("./src/icons/ico-menu.svg");
+    mask-image: url("./src/icons/ico-menu.svg");
 }
 
 .ico-money {
@@ -164,6 +288,51 @@
 .ico-monitoreo {
     -webkit-mask-image: url("./src/icons/ico-monitoreo.svg");
     mask-image: url("./src/icons/ico-monitoreo.svg");
+}
+
+.ico-ok {
+    -webkit-mask-image: url("./src/icons/ico-ok.svg");
+    mask-image: url("./src/icons/ico-ok.svg");
+}
+
+.ico-ok_v2 {
+    -webkit-mask-image: url("./src/icons/ico-ok_v2.svg");
+    mask-image: url("./src/icons/ico-ok_v2.svg");
+}
+
+.ico-perfil {
+    -webkit-mask-image: url("./src/icons/ico-perfil.svg");
+    mask-image: url("./src/icons/ico-perfil.svg");
+}
+
+.ico-plus {
+    -webkit-mask-image: url("./src/icons/ico-plus.svg");
+    mask-image: url("./src/icons/ico-plus.svg");
+}
+
+.ico-porcentaje {
+    -webkit-mask-image: url("./src/icons/ico-porcentaje.svg");
+    mask-image: url("./src/icons/ico-porcentaje.svg");
+}
+
+.ico-product {
+    -webkit-mask-image: url("./src/icons/ico-product.svg");
+    mask-image: url("./src/icons/ico-product.svg");
+}
+
+.ico-recargas {
+    -webkit-mask-image: url("./src/icons/ico-recargas.svg");
+    mask-image: url("./src/icons/ico-recargas.svg");
+}
+
+.ico-remesa {
+    -webkit-mask-image: url("./src/icons/ico-remesa.svg");
+    mask-image: url("./src/icons/ico-remesa.svg");
+}
+
+.ico-reportes {
+    -webkit-mask-image: url("./src/icons/ico-reportes.svg");
+    mask-image: url("./src/icons/ico-reportes.svg");
 }
 
 .ico-sms {
@@ -186,6 +355,11 @@
     mask-image: url("./src/icons/ico-transacciones.svg");
 }
 
+.ico-ubi {
+    -webkit-mask-image: url("./src/icons/ico-ubi.svg");
+    mask-image: url("./src/icons/ico-ubi.svg");
+}
+
 .ico-user {
     -webkit-mask-image: url("./src/icons/ico-user.svg");
     mask-image: url("./src/icons/ico-user.svg");
@@ -204,5 +378,10 @@
 .ico-whatsapp {
     -webkit-mask-image: url("./src/icons/ico-whatsapp.svg");
     mask-image: url("./src/icons/ico-whatsapp.svg");
+}
+
+.icon-social-te {
+    -webkit-mask-image: url("./src/icons/icon-social-te.svg");
+    mask-image: url("./src/icons/icon-social-te.svg");
 }
 
