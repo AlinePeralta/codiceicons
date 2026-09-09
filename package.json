@@ -1,0 +1,8 @@
+{
+  "name": "codiceicons",
+  "version": "1.0.0",
+  "description": "Biblioteca de iconos personalizados para Códice",
+  "scripts": {
+    "icons": "node scripts/generate-icons.js"
+  }
+}

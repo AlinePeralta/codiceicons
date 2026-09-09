@@ -1,11 +1,8 @@
-/* =========================================================
-   Códice Icons 2.0
-   Librería de iconos SVG
-   ========================================================= */
-
-/* =========================================================
-   Base para todos los iconos
-   ========================================================= */
+/*
+ * Códice Icons 2.0
+ * Generado automáticamente.
+ * NO editar manualmente.
+ */
 
 [class^="ico-"],
 [class*=" ico-"] {
@@ -13,8 +10,7 @@
     width: 1em;
     height: 1em;
 
-    /* El icono adopta el color del elemento o de su padre */
-    background-color: currentColor !important;
+    background-color: currentColor;
 
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
@@ -27,57 +23,163 @@
     vertical-align: middle;
 }
 
-/* =========================================================
-   Iconos
-   ========================================================= */
+.ico-admin {
+    -webkit-mask-image: url("./src/icons/ico-admin.svg");
+    mask-image: url("./src/icons/ico-admin.svg");
+}
+
+.ico-advertencia {
+    -webkit-mask-image: url("./src/icons/ico-advertencia.svg");
+    mask-image: url("./src/icons/ico-advertencia.svg");
+}
+
+.ico-agregar {
+    -webkit-mask-image: url("./src/icons/ico-agregar.svg");
+    mask-image: url("./src/icons/ico-agregar.svg");
+}
+
+.ico-apps {
+    -webkit-mask-image: url("./src/icons/ico-apps.svg");
+    mask-image: url("./src/icons/ico-apps.svg");
+}
+
+.ico-arrow-cambio {
+    -webkit-mask-image: url("./src/icons/ico-arrow-cambio.svg");
+    mask-image: url("./src/icons/ico-arrow-cambio.svg");
+}
+
+.ico-bell {
+    -webkit-mask-image: url("./src/icons/ico-bell.svg");
+    mask-image: url("./src/icons/ico-bell.svg");
+}
 
 .ico-buscar {
-    -webkit-mask-image: url("./icons/ico-buscar.svg");
-    mask-image: url("./icons/ico-buscar.svg");
+    -webkit-mask-image: url("./src/icons/ico-buscar.svg");
+    mask-image: url("./src/icons/ico-buscar.svg");
 }
 
 .ico-card {
-    -webkit-mask-image: url("./icons/ico-card.svg");
-    mask-image: url("./icons/ico-card.svg");
+    -webkit-mask-image: url("./src/icons/ico-card.svg");
+    mask-image: url("./src/icons/ico-card.svg");
+}
+
+.ico-cerrar {
+    -webkit-mask-image: url("./src/icons/ico-cerrar.svg");
+    mask-image: url("./src/icons/ico-cerrar.svg");
+}
+
+.ico-configuracion {
+    -webkit-mask-image: url("./src/icons/ico-configuracion.svg");
+    mask-image: url("./src/icons/ico-configuracion.svg");
+}
+
+.ico-contracargo {
+    -webkit-mask-image: url("./src/icons/ico-contracargo.svg");
+    mask-image: url("./src/icons/ico-contracargo.svg");
+}
+
+.ico-correo {
+    -webkit-mask-image: url("./src/icons/ico-correo.svg");
+    mask-image: url("./src/icons/ico-correo.svg");
+}
+
+.ico-dashboard {
+    -webkit-mask-image: url("./src/icons/ico-dashboard.svg");
+    mask-image: url("./src/icons/ico-dashboard.svg");
+}
+
+.ico-delete {
+    -webkit-mask-image: url("./src/icons/ico-delete.svg");
+    mask-image: url("./src/icons/ico-delete.svg");
+}
+
+.ico-descargar {
+    -webkit-mask-image: url("./src/icons/ico-descargar.svg");
+    mask-image: url("./src/icons/ico-descargar.svg");
+}
+
+.ico-devolucion {
+    -webkit-mask-image: url("./src/icons/ico-devolucion.svg");
+    mask-image: url("./src/icons/ico-devolucion.svg");
+}
+
+.ico-doc {
+    -webkit-mask-image: url("./src/icons/ico-doc.svg");
+    mask-image: url("./src/icons/ico-doc.svg");
 }
 
 .ico-edit {
-    -webkit-mask-image: url("./icons/ico-edit.svg");
-    mask-image: url("./icons/ico-edit.svg");
+    -webkit-mask-image: url("./src/icons/ico-edit.svg");
+    mask-image: url("./src/icons/ico-edit.svg");
 }
 
-/* =========================================================
-   Estilos de demostración
-   ========================================================= */
-
-body {
-    font-family: Arial, sans-serif;
-    padding: 40px;
+.ico-filtros {
+    -webkit-mask-image: url("./src/icons/ico-filtros.svg");
+    mask-image: url("./src/icons/ico-filtros.svg");
 }
 
-h1 {
-    margin-bottom: 40px;
+.ico-flecha-l {
+    -webkit-mask-image: url("./src/icons/ico-flecha-l.svg");
+    mask-image: url("./src/icons/ico-flecha-l.svg");
 }
 
-.demo {
-    display: flex;
-    gap: 40px;
-    align-items: center;
+.ico-link {
+    -webkit-mask-image: url("./src/icons/ico-link.svg");
+    mask-image: url("./src/icons/ico-link.svg");
 }
 
-.icon {
-    font-size: 40px;
-    color: #1d1e1e;
+.ico-money {
+    -webkit-mask-image: url("./src/icons/ico-money.svg");
+    mask-image: url("./src/icons/ico-money.svg");
 }
 
-.icon-orange {
-    color: #f09b2e;
+.ico-money2 {
+    -webkit-mask-image: url("./src/icons/ico-money2.svg");
+    mask-image: url("./src/icons/ico-money2.svg");
 }
 
-.icon-green {
-    color: #198754;
+.ico-monitoreo {
+    -webkit-mask-image: url("./src/icons/ico-monitoreo.svg");
+    mask-image: url("./src/icons/ico-monitoreo.svg");
 }
 
-.icon-blue {
-    color: #0d6efd;
+.ico-sms {
+    -webkit-mask-image: url("./src/icons/ico-sms.svg");
+    mask-image: url("./src/icons/ico-sms.svg");
 }
+
+.ico-store {
+    -webkit-mask-image: url("./src/icons/ico-store.svg");
+    mask-image: url("./src/icons/ico-store.svg");
+}
+
+.ico-ticket {
+    -webkit-mask-image: url("./src/icons/ico-ticket.svg");
+    mask-image: url("./src/icons/ico-ticket.svg");
+}
+
+.ico-transacciones {
+    -webkit-mask-image: url("./src/icons/ico-transacciones.svg");
+    mask-image: url("./src/icons/ico-transacciones.svg");
+}
+
+.ico-user {
+    -webkit-mask-image: url("./src/icons/ico-user.svg");
+    mask-image: url("./src/icons/ico-user.svg");
+}
+
+.ico-users {
+    -webkit-mask-image: url("./src/icons/ico-users.svg");
+    mask-image: url("./src/icons/ico-users.svg");
+}
+
+.ico-walet {
+    -webkit-mask-image: url("./src/icons/ico-walet.svg");
+    mask-image: url("./src/icons/ico-walet.svg");
+}
+
+.ico-whatsapp {
+    -webkit-mask-image: url("./src/icons/ico-whatsapp.svg");
+    mask-image: url("./src/icons/ico-whatsapp.svg");
+}
+
