@@ -2,33 +2,35 @@
    Códice Icons 2.0
    Librería de iconos SVG
    ========================================================= */
-
-/* ---------------------------------------------------------
+/* =========================================================
    Base para todos los iconos
-   --------------------------------------------------------- */
+   ========================================================= */
 
 [class^="ico-"],
 [class*=" ico-"] {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
+    display: inline-block;
 
-  /* Configuración de la máscara SVG */
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  -webkit-mask-size: contain;
+    width: 1em;
+    height: 1em;
 
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
+    /* Color del icono */
+    background-color: currentColor;
 
-  /* Evita problemas de alineación */
-  vertical-align: middle;
+    /* Configuración de la máscara SVG */
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+
+    /* Alineación */
+    vertical-align: middle;
 }
-
-/* ---------------------------------------------------------
+/* =========================================================
    Iconos
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .ico-buscar {
   -webkit-mask-image: url("./icons/ico-buscar.svg");
