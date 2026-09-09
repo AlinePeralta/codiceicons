@@ -18,6 +18,10 @@ let css = `/*
  * NO editar manualmente.
  */
 
+/* =========================================================
+   Base
+   ========================================================= */
+
 [class^="ico-"],
 [class*=" ico-"] {
     display: inline-block;
@@ -35,6 +39,25 @@ let css = `/*
     mask-size: contain;
 
     vertical-align: middle;
+}
+
+/* =========================================================
+   Tamaños
+   ========================================================= */
+
+/* Small - tamaño por defecto */
+.icon-sm {
+    font-size: 1rem;
+}
+
+/* Medium */
+.icon-md {
+    font-size: 1.5rem;
+}
+
+/* Large */
+.icon-lg {
+    font-size: 2rem;
 }
 
 `;
