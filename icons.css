@@ -8,10 +8,11 @@
 
 [class^="ico-"],
 [class*=" ico-"] {
-    display: inline-block;
+     display: inline-block;
 
     width: 1em;
     height: 1em;
+
     /* Color del icono */
     background-color: currentColor;
 
