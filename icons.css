@@ -8,26 +8,19 @@
 
 [class^="ico-"],
 [class*=" ico-"] {
-     display: inline-block;
-
+    display: inline-block;
     width: 1em;
     height: 1em;
-
-    /* Color del icono */
-    background-color: currentColor;
-
-    /* Configuración de la máscara SVG */
+    background-color: currentColor!important;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
     -webkit-mask-size: contain;
-
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: contain;
-
-    /* Alineación */
     vertical-align: middle;
 }
+
 /* =========================================================
    Iconos
    ========================================================= */
@@ -64,7 +57,7 @@ h1 {
 
 .icon {
   font-size: 40px;
-  color: #002d62;
+  color: #1d1e1e;
 }
 
 .icon-orange {
