@@ -8,7 +8,11 @@ const path = require("path");
 const iconsDir = path.join(__dirname, "../src/icons");
 const cssOutputFile = path.join(__dirname, "../icons.css");
 const htmlOutputFile = path.join(__dirname, "../index.html");
-
+const PRODUCTION_VERSION = "v1.0.0";
+const PRODUCTION_CSS_URL =
+    `https://cdn.jsdelivr.net/gh/AlinePeralta/codiceicons@${PRODUCTION_VERSION}/icons.min.css`;
+const DEVELOPMENT_CSS_URL =
+    "https://cdn.jsdelivr.net/gh/AlinePeralta/codiceicons@main/icons.css";
 
 // Obtener todos los SVG
 
@@ -115,7 +119,8 @@ fs.writeFileSync(cssOutputFile, css, "utf8");
 // Generar HTML
 
 
-let html = `<!DOCTYPE html>
+let html = 
+`<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -286,6 +291,125 @@ let html = `<!DOCTYPE html>
                     <small class="text-gray-500">Framework de estilos de SERTI</small>
 
                 </div>
+
+                <!--VERSIONES DE LA BIBLIOTECA-->
+
+<section class="max-w-5xl mx-auto px-6 mt-12 mb-16">
+
+    <div class="bg-white rounded-xl p-6 shadow-lg">
+
+        <div class="mb-6">
+
+            <p class="text-xs uppercase tracking-wider text-gray-500 mb-1">
+                Códice Icons
+            </p>
+
+            <h2 class="text-2xl font-bold text-gray-900">
+                Versiones y uso
+            </h2>
+
+            <!-- <p class="text-sm text-gray-600 mt-2">
+                Consulta la versión de desarrollo o utiliza una versión
+                etiquetada para proyectos productivos.
+            </p>-->
+
+        </div>
+
+
+     --> Desarrollo -->
+
+        <div class="border rounded-lg p-5 mb-4">
+
+            <div class="flex items-center justify-between flex-wrap gap-3">
+
+                <div>
+
+                    <p class="text-xs uppercase tracking-wider text-gray-500">
+                        Desarrollo
+                    </p>
+
+                    <p class="font-semibold text-gray-900 mt-1">
+                        @main
+                    </p>
+
+                    <p class="text-sm text-gray-600 mt-1">
+                        Versión en desarrollo con los cambios más recientes.
+                    </p>
+
+                </div>
+
+                <a
+                    href="${DEVELOPMENT_CSS_URL}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm font-semibold"
+                >
+                    Ver CSS
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Producción -->
+
+        <div class="border-2 rounded-lg p-5">
+
+            <div class="flex items-center justify-between flex-wrap gap-3">
+
+                <div>
+
+                    <p class="text-xs uppercase tracking-wider text-gray-500">
+                        Producción
+                    </p>
+
+                    <p class="font-semibold text-gray-900 mt-1">
+                        ${PRODUCTION_VERSION}
+                    </p>
+
+                    <p class="text-sm text-gray-600 mt-1">
+                        Versión estable recomendada para proyectos productivos.
+                    </p>
+
+                </div>
+
+                <a
+                    href="${PRODUCTION_CSS_URL}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm font-semibold"
+                >
+                    Ver CSS
+                </a>
+
+            </div>
+
+
+            <!-- Link para copiar -->
+
+            <div class="mt-5">
+
+                <p class="text-xs text-gray-500 mb-2">
+                    Link para proyectos:
+                </p>
+
+                <div class="bg-gray-100 rounded-lg p-4">
+
+                    <code
+                        class="text-xs text-gray-800 break-all"
+                        id="production-url"
+                    >${PRODUCTION_CSS_URL}</code>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
                 <!-- Contador -->
