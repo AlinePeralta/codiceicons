@@ -12,63 +12,5401 @@
 
     <title>Códice Icons 2.0</title>
 
+    <!-- Tailwind CSS - únicamente para el visor -->
     <link
         rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/AlinePeralta/codiceicons@main/icons.css?v=9"
+        href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
     >
+
+    <!-- Códice Icons -->
+    <link
+        rel="stylesheet"
+        href="./icons.css"
+    >
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(59, 130, 246, 0.08),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(139, 92, 246, 0.08),
+                    transparent 30%
+                ),
+                #080b12;
+        }
+
+        .icon-card {
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .icon-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.18);
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .icon-preview {
+            min-height: 100px;
+        }
+
+        .search-input::placeholder {
+            color: #6b7280;
+        }
+
+        .copy-button {
+            transition:
+                background-color 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .copy-button:hover {
+            transform: translateY(-1px);
+        }
+
+        .tech-line {
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.15),
+                transparent
+            );
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            .icon-card,
+            .copy-button {
+                transition: none;
+            }
+
+            .icon-card:hover,
+            .copy-button:hover {
+                transform: none;
+            }
+
+        }
+
+    </style>
 
 </head>
 
 
-<body>
+<body class="text-gray-100">
 
-    <h1>Icons 2.0 Codex</h1>
-    <p class="icon-orange">Explora la colección de iconos SVG de Códice Icons 2.0.</p>
-
-    <div class="demo">
-
-        <i class="ico-buscar icon"></i>
-
-        <i class="ico-card icon"></i>
-
-        <i class="ico-edit icon"></i>
-
-    </div>
+    <main class="max-w-7xl mx-auto px-6 py-12">
 
 
-    <h2>Prueba de colores</h2>
+        <!-- Header -->
 
-    <div class="demo">
+        <header class="mb-10">
 
-        <i class="ico-buscar icon icon-orange"></i>
+            <div class="flex flex-col md:flex-row
+                        md:items-end md:justify-between
+                        gap-6">
 
-        <i class="ico-card icon icon-green"></i>
+                <div>
 
-        <i class="ico-edit icon icon-orange"></i>
+                    <div class="flex items-center gap-3 mb-3">
 
-    </div>
+                        <span
+                            class="text-xs font-mono
+                                   tracking-widest
+                                   uppercase
+                                   text-gray-500"
+                        >
+                            CÓDICE
+                        </span>
+
+                        <span class="text-gray-700">
+                            /
+                        </span>
+
+                        <span
+                            class="text-xs font-mono
+                                   tracking-widest
+                                   uppercase
+                                   text-gray-500"
+                        >
+                            ICONS 2.0
+                        </span>
+
+                    </div>
 
 
-    <h2>Prueba de tamaños</h2>
+                    <h1 class="text-4xl md:text-5xl
+                               font-bold tracking-tight">
 
-    <div class="demo">
+                        Biblioteca de iconos
 
-        <i
-            class="ico-card"
-            style="font-size: 16px;"
-        ></i>
+                    </h1>
 
-        <i
-            class="ico-card"
-            style="font-size: 32px;"
-        ></i>
 
-        <i
-            class="ico-card"
-            style="font-size: 64px;"
-        ></i>
+                    <p class=" mt-3 max-w-2xl">
 
-    </div>
+                        Biblioteca de iconos
+                        personalizados para Códice.
+
+                    </p>
+                    <small class="text-gray-500">Framework de estilos de SERTI</small>
+
+                </div>
+
+
+                <!-- Contador -->
+
+                <div
+                    class="border border-gray-800
+                           rounded-xl
+                           bg-gray-900/70
+                           px-6 py-4"
+                >
+
+                    <div
+                        class="text-3xl font-bold
+                               font-mono"
+                    >
+                        70
+                    </div>
+
+                    <div
+                        class="text-xs uppercase
+                               tracking-widest
+                               text-gray-500 mt-1"
+                    >
+                        iconos disponibles
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <div class="tech-line mb-8"></div>
+
+
+        <!--Buscador-->
+
+        <div class="mb-10">
+
+            <input
+                id="search"
+                type="search"
+                placeholder="Buscar icono por nombre..."
+                class="search-input
+                       w-full
+                       px-5 py-4
+                       rounded-xl
+                       bg-gray-900
+                       border border-gray-800
+                       text-gray-200
+                       outline-none
+                       focus:border-gray-600"
+            >
+
+        </div>
+
+
+        <!--Tamaños-->
+
+        <section class="mb-12">
+
+            <div class="mb-5">
+
+                <h2 class="text-xl font-semibold">
+                    Tamaños
+                </h2>
+
+                <p class="text-sm text-gray-500 mt-1">
+                    El tamaño base se aplica automáticamente.
+                    Los tamaños adicionales utilizan clases
+                    opcionales.
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1
+                        md:grid-cols-3
+                        gap-4">
+
+
+                
+
+                <div
+                    class="bg-gray-900
+                           border border-gray-800
+                           rounded-xl
+                           p-5"
+                >
+
+                    <div class="flex items-center
+                                justify-between mb-4">
+
+                        <span
+                            class="text-sm font-semibold"
+                        >
+                            Base
+                        </span>
+
+                        <span
+                            class="text-xs font-mono
+                                   text-gray-500"
+                        >
+                            1.4rem
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex items-center gap-4">
+
+                        <i class="ico-card"></i>
+
+                        <code
+                            class="text-xs text-gray-400"
+                        >
+                            &lt;i class="ico-card"&gt;&lt;/i&gt;
+                        </code>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Medium -->
+
+                <div
+                    class="bg-gray-900
+                           border border-gray-800
+                           rounded-xl
+                           p-5"
+                >
+
+                    <div class="flex items-center
+                                justify-between mb-4">
+
+                        <span
+                            class="text-sm font-semibold"
+                        >
+                            Medium
+                        </span>
+
+                        <span
+                            class="text-xs font-mono
+                                   text-gray-500"
+                        >
+                            1.8rem
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex items-center gap-4">
+
+                        <i class="ico-card icon-md"></i>
+
+                        <code
+                            class="text-xs text-gray-400"
+                        >
+                            &lt;i class="ico-card icon-md"&gt;
+                        </code>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Large -->
+
+                <div
+                    class="bg-gray-900
+                           border border-gray-800
+                           rounded-xl
+                           p-5"
+                >
+
+                    <div class="flex items-center
+                                justify-between mb-4">
+
+                        <span
+                            class="text-sm font-semibold"
+                        >
+                            Large
+                        </span>
+
+                        <span
+                            class="text-xs font-mono
+                                   text-gray-500"
+                        >
+                            2.4rem
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex items-center gap-4">
+
+                        <i class="ico-card icon-lg"></i>
+
+                        <code
+                            class="text-xs text-gray-400"
+                        >
+                            &lt;i class="ico-card icon-lg"&gt;
+                        </code>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!--Animación -->
+
+        <section class="mb-12">
+
+            <div class="mb-5">
+
+                <h2 class="text-xl font-semibold">
+                    Animación opcional
+                </h2>
+
+                <p class="text-sm text-gray-500 mt-1">
+                    Agrega <code class="text-gray-300">
+                    ico-animate
+                    </code> para activar un movimiento
+                    sutil al pasar el cursor.
+                </p>
+
+            </div>
+
+
+            <div
+                class="bg-gray-900
+                       border border-gray-800
+                       rounded-xl
+                       p-6"
+            >
+
+                <div class="flex items-center gap-6">
+
+                    <i
+                        class="ico-card
+                               icon-lg
+                               ico-animate"
+                    ></i>
+
+                    <code class="text-sm text-gray-400">
+
+                        &lt;i class="ico-card
+                        icon-lg ico-animate"&gt;&lt;/i&gt;
+
+                    </code>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!--Iconos -->
+
+        <section>
+
+            <div
+                id="icons"
+                class="grid grid-cols-2
+                       sm:grid-cols-3
+                       md:grid-cols-4
+                       lg:grid-cols-6
+                       gap-4"
+            >
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-admin"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-admin icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-admin
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-admin"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-admin', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-advertencia"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-advertencia icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-advertencia
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-advertencia"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-advertencia', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-agregar"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-agregar icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-agregar
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-agregar"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-agregar', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-apps"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-apps icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-apps
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-apps"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-apps', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-arrow-cambio"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-arrow-cambio icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-arrow-cambio
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-arrow-cambio"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-arrow-cambio', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-bank"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-bank icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-bank
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-bank"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-bank', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-bell--slash"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-bell--slash icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-bell--slash
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-bell--slash"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-bell--slash', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-bell"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-bell icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-bell
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-bell"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-bell', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-buscar"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-buscar icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-buscar
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-buscar"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-buscar', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-calendar"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-calendar icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-calendar
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-calendar"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-calendar', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-camera"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-camera icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-camera
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-camera"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-camera', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-card"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-card icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-card
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-card"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-card', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-cargar"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-cargar icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-cargar
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-cargar"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-cargar', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-cash"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-cash icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-cash
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-cash"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-cash', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-cerrar"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-cerrar icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-cerrar
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-cerrar"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-cerrar', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-configuracion"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-configuracion icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-configuracion
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-configuracion"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-configuracion', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-contracargo"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-contracargo icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-contracargo
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-contracargo"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-contracargo', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-copy"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-copy icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-copy
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-copy"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-copy', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-correo"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-correo icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-correo
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-correo"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-correo', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-dashboard"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-dashboard icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-dashboard
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-dashboard"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-dashboard', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-delete"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-delete icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-delete
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-delete"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-delete', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-descargar"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-descargar icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-descargar
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-descargar"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-descargar', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-descargar_1"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-descargar_1 icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-descargar_1
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-descargar_1"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-descargar_1', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-devolucion"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-devolucion icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-devolucion
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-devolucion"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-devolucion', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-devolver"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-devolver icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-devolver
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-devolver"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-devolver', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-dinero"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-dinero icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-dinero
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-dinero"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-dinero', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-dispersion"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-dispersion icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-dispersion
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-dispersion"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-dispersion', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-doc"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-doc icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-doc
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-doc"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-doc', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-edit"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-edit icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-edit
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-edit"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-edit', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-editar"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-editar icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-editar
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-editar"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-editar', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-edocuenta"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-edocuenta icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-edocuenta
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-edocuenta"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-edocuenta', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-error"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-error icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-error
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-error"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-error', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-excel"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-excel icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-excel
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-excel"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-excel', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-eye-slash"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-eye-slash icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-eye-slash
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-eye-slash"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-eye-slash', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-eye"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-eye icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-eye
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-eye"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-eye', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-face"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-face icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-face
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-face"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-face', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-filtros"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-filtros icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-filtros
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-filtros"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-filtros', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-flecha-l"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-flecha-l icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-flecha-l
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-flecha-l"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-flecha-l', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-imagen"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-imagen icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-imagen
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-imagen"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-imagen', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-info"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-info icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-info
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-info"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-info', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-insta"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-insta icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-insta
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-insta"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-insta', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-left"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-left icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-left
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-left"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-left', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-link"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-link icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-link
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-link"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-link', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-linkedin"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-linkedin icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-linkedin
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-linkedin"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-linkedin', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-logout"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-logout icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-logout
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-logout"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-logout', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-menu"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-menu icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-menu
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-menu"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-menu', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-money"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-money icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-money
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-money"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-money', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-money2"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-money2 icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-money2
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-money2"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-money2', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-monitoreo"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-monitoreo icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-monitoreo
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-monitoreo"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-monitoreo', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-nfc"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-nfc icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-nfc
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-nfc"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-nfc', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-ok"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-ok icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-ok
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-ok"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-ok', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-ok_v2"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-ok_v2 icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-ok_v2
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-ok_v2"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-ok_v2', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-perfil"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-perfil icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-perfil
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-perfil"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-perfil', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-plus"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-plus icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-plus
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-plus"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-plus', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-porcentaje"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-porcentaje icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-porcentaje
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-porcentaje"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-porcentaje', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-product"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-product icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-product
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-product"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-product', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-recargas"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-recargas icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-recargas
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-recargas"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-recargas', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-remesa"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-remesa icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-remesa
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-remesa"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-remesa', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-reportes"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-reportes icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-reportes
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-reportes"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-reportes', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-right"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-right icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-right
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-right"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-right', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-sms"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-sms icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-sms
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-sms"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-sms', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-social-te"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-social-te icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-social-te
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-social-te"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-social-te', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-store"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-store icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-store
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-store"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-store', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-ticket"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-ticket icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-ticket
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-ticket"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-ticket', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-transacciones"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-transacciones icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-transacciones
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-transacciones"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-transacciones', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-ubi"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-ubi icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-ubi
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-ubi"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-ubi', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-user"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-user icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-user
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-user"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-user', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-users"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-users icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-users
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-users"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-users', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-walet"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-walet icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-walet
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-walet"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-walet', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="icon-card
+                           bg-white
+                           text-gray-900
+                           border border-gray-200
+                           rounded-xl
+                           p-5"
+                    data-name="ico-whatsapp"
+                >
+
+                    <div
+                        class="icon-preview
+                               flex
+                               items-center
+                               justify-center"
+                    >
+
+                        <i
+                            class="ico-whatsapp icon-lg"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <p
+                            class="font-mono
+                                   text-sm
+                                   font-semibold
+                                   truncate"
+                        >
+                            .ico-whatsapp
+                        </p>
+
+
+                        <code
+                            class="block
+                                   text-xs
+                                   text-gray-400
+                                   mt-2
+                                   truncate"
+                        >
+                            &lt;i class="ico-whatsapp"&gt;
+                        </code>
+
+
+                        <button
+                            type="button"
+                            onclick="copyIcon('ico-whatsapp', this)"
+                            class="copy-button
+                                   mt-4
+                                   w-full
+                                   px-3
+                                   py-2
+                                   text-xs
+                                   font-medium
+                                   rounded-lg
+                                   bg-gray-100
+                                   hover:bg-gray-200"
+                        >
+                            Copiar clase
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+            <!-- Sin resultados -->
+
+            <div
+                id="no-results"
+                class="hidden
+                       text-center
+                       py-20
+                       text-gray-500"
+            >
+
+                No se encontraron iconos.
+
+            </div>
+
+        </section>
+
+
+        <!--Footer-->
+
+        <footer class="mt-20 pt-8
+                       border-t border-gray-900
+                       text-center">
+
+            <p
+                class="text-sm
+                       text-gray-500"
+            >
+                Desarrollado por: 
+                <span class="text-gray-300 font-medium">
+                    Aline Peralta
+                </span>
+            </p>
+
+
+            <p
+                class="text-xs
+                       text-gray-700
+                       font-mono
+                       mt-2"
+            >
+                Códice Icons 2.0
+            </p>
+
+        </footer>
+
+
+    </main>
+
+
+
+    <script>
+
+        const search = document.getElementById("search");
+        const cards = document.querySelectorAll(".icon-card");
+        const noResults = document.getElementById("no-results");
+
+
+        // =====================================================
+        // Buscar iconos
+        // =====================================================
+
+        search.addEventListener("input", function () {
+
+            const value = this.value
+                .toLowerCase()
+                .trim();
+
+            let visibleCards = 0;
+
+
+            cards.forEach(card => {
+
+                const name = card
+                    .dataset
+                    .name
+                    .toLowerCase();
+
+
+                const visible =
+                    name.includes(value);
+
+
+                card.style.display =
+                    visible ? "" : "none";
+
+
+                if (visible) {
+                    visibleCards++;
+                }
+
+            });
+
+
+            noResults.classList.toggle(
+                "hidden",
+                visibleCards !== 0
+            );
+
+        });
+
+
+
+        function copyIcon(iconName, button) {
+
+            navigator.clipboard.writeText(
+                "ico-" + iconName.replace(/^ico-/, "")
+            );
+
+
+            const originalText =
+                button.textContent;
+
+
+            button.textContent =
+                "✓ Copiado";
+
+
+            setTimeout(() => {
+
+                button.textContent =
+                    originalText;
+
+            }, 1200);
+
+        }
+
+    </script>
+
 
 </body>
 

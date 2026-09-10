@@ -4,9 +4,7 @@
  * NO editar manualmente.
  */
 
-/* =========================================================
-   Base
-   ========================================================= */
+/* Base */
 
 [class^="ico-"],
 [class*=" ico-"] {
@@ -14,7 +12,7 @@
     width: 1em;
     height: 1em;
 
-    font-size: 1rem;
+    font-size: 1.4rem;
     background-color: currentColor;
 
     -webkit-mask-repeat: no-repeat;
@@ -28,27 +26,39 @@
     vertical-align: middle;
 }
 
-/* =========================================================
-   Tamaños
-   ========================================================= */
+/*Tamaños */
 
 .icon-md {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .icon-lg {
-    font-size: 2rem;
+    font-size: 2.4rem;
 }
 
-.co-imagen {
-    -webkit-mask-image: url("./src/icons/co-imagen.svg");
-    mask-image: url("./src/icons/co-imagen.svg");
+/* Animación opcional */
+
+.ico-animate {
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
 }
 
-.ico right {
-    -webkit-mask-image: url("./src/icons/ico right.svg");
-    mask-image: url("./src/icons/ico right.svg");
+.ico-animate:hover {
+    transform: translateY(-2px);
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .ico-animate {
+        transition: none;
+    }
+
+    .ico-animate:hover {
+        transform: none;
+    }
+}
+
+/* Iconos */
 
 .ico-admin {
     -webkit-mask-image: url("./src/icons/ico-admin.svg");
@@ -240,6 +250,11 @@
     mask-image: url("./src/icons/ico-flecha-l.svg");
 }
 
+.ico-imagen {
+    -webkit-mask-image: url("./src/icons/ico-imagen.svg");
+    mask-image: url("./src/icons/ico-imagen.svg");
+}
+
 .ico-info {
     -webkit-mask-image: url("./src/icons/ico-info.svg");
     mask-image: url("./src/icons/ico-info.svg");
@@ -290,6 +305,11 @@
     mask-image: url("./src/icons/ico-monitoreo.svg");
 }
 
+.ico-nfc {
+    -webkit-mask-image: url("./src/icons/ico-nfc.svg");
+    mask-image: url("./src/icons/ico-nfc.svg");
+}
+
 .ico-ok {
     -webkit-mask-image: url("./src/icons/ico-ok.svg");
     mask-image: url("./src/icons/ico-ok.svg");
@@ -335,9 +355,19 @@
     mask-image: url("./src/icons/ico-reportes.svg");
 }
 
+.ico-right {
+    -webkit-mask-image: url("./src/icons/ico-right.svg");
+    mask-image: url("./src/icons/ico-right.svg");
+}
+
 .ico-sms {
     -webkit-mask-image: url("./src/icons/ico-sms.svg");
     mask-image: url("./src/icons/ico-sms.svg");
+}
+
+.ico-social-te {
+    -webkit-mask-image: url("./src/icons/ico-social-te.svg");
+    mask-image: url("./src/icons/ico-social-te.svg");
 }
 
 .ico-store {
@@ -378,10 +408,5 @@
 .ico-whatsapp {
     -webkit-mask-image: url("./src/icons/ico-whatsapp.svg");
     mask-image: url("./src/icons/ico-whatsapp.svg");
-}
-
-.icon-social-te {
-    -webkit-mask-image: url("./src/icons/icon-social-te.svg");
-    mask-image: url("./src/icons/icon-social-te.svg");
 }
 
