@@ -375,6 +375,11 @@
     mask-image: url("./src/icons/ico-store.svg");
 }
 
+.ico-tax {
+    -webkit-mask-image: url("./src/icons/ico-tax.svg");
+    mask-image: url("./src/icons/ico-tax.svg");
+}
+
 .ico-ticket {
     -webkit-mask-image: url("./src/icons/ico-ticket.svg");
     mask-image: url("./src/icons/ico-ticket.svg");
