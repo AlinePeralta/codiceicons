@@ -9,10 +9,9 @@ const iconsDir = path.join(__dirname, "../src/icons");
 const cssOutputFile = path.join(__dirname, "../icons.css");
 const htmlOutputFile = path.join(__dirname, "../index.html");
 const PRODUCTION_VERSION = "v1.0.1";
+
 const PRODUCTION_CSS_URL =
     `https://cdn.jsdelivr.net/gh/AlinePeralta/codiceicons@${PRODUCTION_VERSION}/icons.min.css`;
-const DEVELOPMENT_CSS_URL =
-    "https://cdn.jsdelivr.net/gh/AlinePeralta/codiceicons@main/icons.css";
 
 // Obtener todos los SVG
 
@@ -858,7 +857,54 @@ html += `
             }, 1200);
 
         }
+// =====================================================
+// Bloquear botón derecho y accesos al inspector
+// =====================================================
 
+// Bloquear botón derecho del mouse
+document.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+});
+
+// Bloquear teclas de acceso al inspector / código fuente
+document.addEventListener("keydown", function (event) {
+
+    // F12
+    if (event.key === "F12") {
+        event.preventDefault();
+        return;
+    }
+
+    // Ctrl + Shift + I
+    if (
+        event.ctrlKey &&
+        event.shiftKey &&
+        event.key.toLowerCase() === "i"
+    ) {
+        event.preventDefault();
+        return;
+    }
+
+    // Ctrl + Shift + J
+    if (
+        event.ctrlKey &&
+        event.shiftKey &&
+        event.key.toLowerCase() === "j"
+    ) {
+        event.preventDefault();
+        return;
+    }
+
+    // Ctrl + U
+    if (
+        event.ctrlKey &&
+        event.key.toLowerCase() === "u"
+    ) {
+        event.preventDefault();
+        return;
+    }
+
+});
     </script>
 
 

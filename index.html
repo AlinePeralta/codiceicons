@@ -5331,7 +5331,7 @@
                     </p>
 
                     <p class="font-semibold text-gray-900 mt-1">
-                        v1.0.0
+                        v1.0.1
                     </p>
 
                     <p class="text-sm text-gray-600 mt-1">
@@ -5341,7 +5341,7 @@
                 </div>
 
                 <a
-                    href="https://cdn.jsdelivr.net/gh/AlinePeralta/codiceicons@v1.0.0/icons.min.css"
+                    href="https://cdn.jsdelivr.net/gh/AlinePeralta/codiceicons@v1.0.1/icons.min.css"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm font-semibold"
@@ -5365,7 +5365,7 @@
                     <code
                         class="text-xs text-gray-800 break-all"
                         id="production-url"
-                    >https://cdn.jsdelivr.net/gh/AlinePeralta/codiceicons@v1.0.0/icons.min.css</code>
+                    >https://cdn.jsdelivr.net/gh/AlinePeralta/codiceicons@v1.0.1/icons.min.css</code>
 
                 </div>
 
@@ -5485,7 +5485,54 @@
             }, 1200);
 
         }
+// =====================================================
+// Bloquear botón derecho y accesos al inspector
+// =====================================================
 
+// Bloquear botón derecho del mouse
+document.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+});
+
+// Bloquear teclas de acceso al inspector / código fuente
+document.addEventListener("keydown", function (event) {
+
+    // F12
+    if (event.key === "F12") {
+        event.preventDefault();
+        return;
+    }
+
+    // Ctrl + Shift + I
+    if (
+        event.ctrlKey &&
+        event.shiftKey &&
+        event.key.toLowerCase() === "i"
+    ) {
+        event.preventDefault();
+        return;
+    }
+
+    // Ctrl + Shift + J
+    if (
+        event.ctrlKey &&
+        event.shiftKey &&
+        event.key.toLowerCase() === "j"
+    ) {
+        event.preventDefault();
+        return;
+    }
+
+    // Ctrl + U
+    if (
+        event.ctrlKey &&
+        event.key.toLowerCase() === "u"
+    ) {
+        event.preventDefault();
+        return;
+    }
+
+});
     </script>
 
 
