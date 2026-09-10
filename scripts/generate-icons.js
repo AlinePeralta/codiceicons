@@ -8,7 +8,7 @@ const path = require("path");
 const iconsDir = path.join(__dirname, "../src/icons");
 const cssOutputFile = path.join(__dirname, "../icons.css");
 const htmlOutputFile = path.join(__dirname, "../index.html");
-const PRODUCTION_VERSION = "v1.0.0";
+const PRODUCTION_VERSION = "v1.0.1";
 const PRODUCTION_CSS_URL =
     `https://cdn.jsdelivr.net/gh/AlinePeralta/codiceicons@${PRODUCTION_VERSION}/icons.min.css`;
 const DEVELOPMENT_CSS_URL =
