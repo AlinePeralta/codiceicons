@@ -35,7 +35,14 @@
 .icon-lg {
     font-size: 2.4rem;
 }
+/* =========================================================
+   Iconos dentro de navegación
+   ========================================================= */
 
+nav li [class^="ico-"],
+nav li [class*=" ico-"] {
+    font-size: 1.5rem;
+}
 /* Animación opcional */
 
 .ico-animate {
@@ -170,11 +177,6 @@
     mask-image: url("./src/icons/ico-descargar.svg");
 }
 
-.ico-descargar_1 {
-    -webkit-mask-image: url("./src/icons/ico-descargar_1.svg");
-    mask-image: url("./src/icons/ico-descargar_1.svg");
-}
-
 .ico-devolucion {
     -webkit-mask-image: url("./src/icons/ico-devolucion.svg");
     mask-image: url("./src/icons/ico-devolucion.svg");
@@ -198,11 +200,6 @@
 .ico-doc {
     -webkit-mask-image: url("./src/icons/ico-doc.svg");
     mask-image: url("./src/icons/ico-doc.svg");
-}
-
-.ico-edit {
-    -webkit-mask-image: url("./src/icons/ico-edit.svg");
-    mask-image: url("./src/icons/ico-edit.svg");
 }
 
 .ico-editar {
@@ -293,11 +290,6 @@
 .ico-money {
     -webkit-mask-image: url("./src/icons/ico-money.svg");
     mask-image: url("./src/icons/ico-money.svg");
-}
-
-.ico-money2 {
-    -webkit-mask-image: url("./src/icons/ico-money2.svg");
-    mask-image: url("./src/icons/ico-money2.svg");
 }
 
 .ico-monitoreo {

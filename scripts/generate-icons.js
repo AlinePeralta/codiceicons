@@ -12,9 +12,12 @@ const PRODUCTION_VERSION = "v1.0.1";
 
 const PRODUCTION_CSS_URL =
     `https://cdn.jsdelivr.net/gh/AlinePeralta/codiceicons@${PRODUCTION_VERSION}/icons.min.css`;
+    
+
+const SVG_VIEWBOX = "0 0 24 24";
+const STANDARD_STROKE_WIDTH = "2";
 
 // Obtener todos los SVG
-
 
 const files = fs
     .readdirSync(iconsDir)
@@ -62,7 +65,14 @@ let css = `/*
 .icon-lg {
     font-size: 2.4rem;
 }
+/* =========================================================
+   Iconos dentro de navegación
+   ========================================================= */
 
+nav li [class^="ico-"],
+nav li [class*=" ico-"] {
+    font-size: 1.5rem;
+}
 /* Animación opcional */
 
 .ico-animate {
@@ -89,6 +99,176 @@ let css = `/*
 
 `;
 
+// =========================================================
+// Validar SVG
+// =========================================================
+
+function validateSVG(file) {
+
+    const filePath = path.join(iconsDir, file);
+    const content = fs.readFileSync(filePath, "utf8");
+
+    const iconName = path.basename(file, ".svg");
+
+    const result = {
+        name: iconName,
+        viewBoxOK: true,
+        strokeOK: true,
+        strokeValues: [],
+        warnings: []
+    };
+
+
+    // -----------------------------------------------------
+    // Validar ViewBox
+    // -----------------------------------------------------
+
+    const viewBoxMatch = content.match(
+        /viewBox\s*=\s*["']([^"']+)["']/i
+    );
+
+    if (!viewBoxMatch) {
+
+        result.viewBoxOK = false;
+
+        result.warnings.push(
+            `No tiene viewBox`
+        );
+
+    } else {
+
+        const viewBox = viewBoxMatch[1]
+            .trim()
+            .replace(/\s+/g, " ");
+
+        if (viewBox !== SVG_VIEWBOX) {
+
+            result.viewBoxOK = false;
+
+            result.warnings.push(
+                `viewBox: "${viewBox}"`
+            );
+        }
+    }
+
+
+    // -----------------------------------------------------
+    // Buscar stroke-width
+    // -----------------------------------------------------
+
+    const strokeMatches = [
+        ...content.matchAll(
+            /stroke-width\s*=\s*["']([^"']+)["']/gi
+        )
+    ];
+
+    strokeMatches.forEach(match => {
+
+        const value = match[1].trim();
+
+        if (!result.strokeValues.includes(value)) {
+            result.strokeValues.push(value);
+        }
+
+    });
+
+
+    // -----------------------------------------------------
+    // Validar grosor
+    // -----------------------------------------------------
+
+    if (result.strokeValues.length > 0) {
+
+        const differentStroke =
+            result.strokeValues.some(
+                value => value !== STANDARD_STROKE_WIDTH
+            );
+
+        if (differentStroke) {
+
+            result.strokeOK = false;
+
+            result.warnings.push(
+                `stroke-width: ${result.strokeValues.join(", ")}`
+            );
+        }
+
+    }
+
+
+    return result;
+}
+
+
+// =========================================================
+// Ejecutar validación
+// =========================================================
+
+console.log("");
+console.log("==============================================");
+console.log("  VALIDACIÓN DE CÓDICE ICONS");
+console.log("==============================================");
+console.log("");
+
+let validationErrors = 0;
+let validationWarnings = 0;
+
+const validationResults = files.map(validateSVG);
+
+
+validationResults.forEach(result => {
+
+    if (result.warnings.length === 0) {
+
+        console.log(
+            `✓ ${result.name}`
+        );
+
+        return;
+    }
+
+
+    if (!result.viewBoxOK) {
+        validationErrors++;
+    }
+
+    if (!result.strokeOK) {
+        validationWarnings++;
+    }
+
+
+    console.log(
+        `⚠ ${result.name}`
+    );
+
+    result.warnings.forEach(warning => {
+
+        console.log(
+            `   → ${warning}`
+        );
+
+    });
+
+});
+
+
+console.log("");
+console.log("----------------------------------------------");
+
+console.log(
+    `✓ SVG revisados: ${files.length}`
+);
+
+console.log(
+    `✓ Errores de viewBox: ${validationErrors}`
+);
+
+console.log(
+    `⚠ Advertencias de grosor: ${validationWarnings}`
+);
+
+console.log("----------------------------------------------");
+console.log("");
 
 
 // Generar clases de iconos
@@ -667,7 +847,8 @@ html += `
             </div>
 
         </section>
- <!--VERSIONES DE LA BIBLIOTECA-->
+
+ <!--VERSIONES-->
 
 <section class="max-w-7xl mx-auto py-12">
 
